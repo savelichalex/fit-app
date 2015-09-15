@@ -1,0 +1,6 @@
+{
+  "name": "MonCheri",
+  "dependencies": {
+    "base-frame-server": "0.0.*"
+  }
+}
