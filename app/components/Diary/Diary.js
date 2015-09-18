@@ -16,17 +16,18 @@ DiaryComponent.prototype = {
 
     slots: {
         'global': {
-            'on@request:diary': defer(function(data) {
+            'on@request:diary': defer( function( data ) {
                 var self = this;
 
-                this.render( 'diary-index' );
+                this.render( 'diary-index', {}, data.res );
             }),
 
             'on@request:diary_new-record': defer( function ( data ) {
                 var self = this;
-                this.diaryService.addRecord( data ).then( function () {
-                    self.render( 'diary-index' );
-                } );
+                this.diaryService.addRecord( data );
+                //    .then( function () {
+                //    self.render( 'diary-index' );
+                //} );
             } )
         }
     },

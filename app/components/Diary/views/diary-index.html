@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diary</title>
 </head>
 <body>
-<form action="api/diary">
+<form action="api/diary" method="post">
     <label for="diary__exercise"></label>
-    <input type="text" id="diary__exercise"/>
+    <input type="text" id="diary__exercise" name="exercise" />
+    <input type="submit" value="Send"/>
 </form>
 </body>
 </html>
