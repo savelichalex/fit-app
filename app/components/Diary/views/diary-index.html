@@ -2,12 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Diary</title>
 </head>
 <body>
-<form action="api/diary">
-    <label for="diary__exercise"></label>
-    <input type="text" id="diary__exercise"/>
-</form>
+<div id="exercise-form"></div>
+
+<!--Scripts-->
+<!--Vendor-->
+<script src="vendor/bluebird.min.js"></script>
+<script src="vendor/underscore-min.js"></script>
+<script src="vendor/virtual-dom.js"></script>
+<!--Self-->
+<script src="static/js/diary/dist/diary.js"></script>
 </body>
 </html>

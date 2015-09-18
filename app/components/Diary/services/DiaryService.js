@@ -9,12 +9,12 @@ DiaryService.prototype = {
 
     addRecord: function ( d ) {
         var req = d.req,
-            post_data;
+            post_data = '';
         req.on('data', function ( chunk ) {
-            post_data += chunk;
+            post_data += chunk.toString( 'utf-8' );
         } );
         req.on('end', function () {
-            console.log(post_data);
+            console.log(post_data.split('&').map(function(i) { var r = i.split('='); var res = {}; res[r[0]] = r[1]; return res; } ));
         } );
         //return this.query('SELECT name FROM test WHERE id=' + id);
     },
