@@ -9,6 +9,6 @@
         "babel-loader": "5.3.*",
         "json-loader": "0.5.*",
         "text-loader": "0.0.1",
-        "tpl-to-vdom-loader": "0.0.*"
+        "tpl-to-vdom-loader": "0.*"
     }
 }

@@ -6,6 +6,14 @@ function DiaryCollection() {
 
 DiaryCollection.prototype = {
 
+    parse: {
+
+    },
+
+    add: function ( record ) {
+
+    }
+
 };
 
 DiaryCollection.extends( BaseModel );

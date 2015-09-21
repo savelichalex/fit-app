@@ -18,10 +18,10 @@ Ajax.prototype = {
 
     slots: {
         global: {
-            'command@get': function ( url, data ) {
+            'command@ajax:get': function ( url, data ) {
                 return this.getRequest( url, data );
             },
-            'command@post': function ( url, data ) {
+            'command@ajax:post': function ( url, data ) {
                 return this.postRequest( url, data );
             }
         }

@@ -1,3 +1,5 @@
-/**
- * Created by savelichalex on 18.09.15.
- */
+import util from 'base-frame';
+
+import Diary from './Diary/Diary';
+
+(0, new Diary());

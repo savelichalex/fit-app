@@ -15,7 +15,8 @@ IO.prototype = {
 
         },
         local: {
-
+            'command@ajax:get': 'ajaxGet',
+            'command@ajax:post': 'ajaxPost'
         }
     },
 

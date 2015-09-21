@@ -17,8 +17,6 @@ DiaryComponent.prototype = {
     slots: {
         'global': {
             'on@request:diary': defer( function( data ) {
-                var self = this;
-
                 this.render( 'diary-index', {}, data.res );
             }),
 
