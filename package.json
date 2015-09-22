@@ -1,7 +1,7 @@
 {
   "name": "fit-app",
   "dependencies": {
-    "base-frame-server": "0.0.*",
+    "base-frame-server": "0.0.5",
     "mysql": "2.*"
   },
   "devDependencies": {
