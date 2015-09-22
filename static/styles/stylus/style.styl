@@ -1,0 +1,34 @@
+@import 'jeet'
+
+normalize-css()
+
+#exercise-form
+  +mobile()
+    padding: 5%;
+
+  label
+    +mobile()
+      label: block
+
+.exercise__title, .exercise__weight, .exercise__repetitions
+  input()
+
+  +mobile()
+    width: 95%
+
+label[for=exercise__weight]
+  +mobile()
+    margin-top: 1rem
+
+.exercise__title-error, .exercise__weight-error, .exercise__repetitions-error
+  input-error()
+
+.approach__start, .approach__before-end, .approach__end
+  button: #ff3842 'large' #fff
+
+  +mobile()
+    width: 100%
+
+.approach__start, .approach__end
+  +mobile()
+    margin-top: 1rem
