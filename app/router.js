@@ -8,7 +8,8 @@ Router.prototype = {
     routes: {
         '/': 'index',
         'diary': 'diary',
-        'POST api/diary': 'diary_new-record'
+        'POST api/diary': 'diary_new-record',
+        'GET api/diary/exercises/:exercise': 'diary_exercises_search'
     }
 };
 

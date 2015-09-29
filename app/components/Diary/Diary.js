@@ -26,6 +26,14 @@ DiaryComponent.prototype = {
                 //    .then( function () {
                 //    self.render( 'diary-index' );
                 //} );
+            }),
+
+            'on@request:diary_exercises_search': defer(function (data) {
+                var self = this;
+                this.diaryService.getExercises(data.params[0])
+                    .then(function (d) {
+                        self.json(d.rows, data.res);
+                    })
             } )
         }
     },

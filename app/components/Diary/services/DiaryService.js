@@ -19,6 +19,17 @@ DiaryService.prototype = {
         //return this.query('SELECT name FROM test WHERE id=' + id);
     },
 
+    getExercises: function (exercise) {
+        exercise = decodeURIComponent(exercise);
+        exercise = exercise.toLowerCase();
+
+        if (exercise === 'any') {
+            return this.query('SELECT `exercize_title` FROM `exercises` LIMIT 3');
+        } else {
+            return this.query('SELECT `exercize_title` FROM `exercises` WHERE `exercize_title` LIKE \"' + exercise + '%\" LIMIT 3');
+        }
+    },
+
     query: function (query) {
         return this.emit.mysqlQuery(query);
     }

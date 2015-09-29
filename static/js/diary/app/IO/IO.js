@@ -22,7 +22,10 @@ IO.prototype = {
 
     slots: {
         global: {
-
+            'command@io:get_exersices': function (exercise) {
+                exercise = encodeURIComponent(exercise);
+                return this.emit.ajaxGet('api/diary/exercises/' + exercise);
+            }
         },
         local: {
 

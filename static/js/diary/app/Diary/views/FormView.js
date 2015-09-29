@@ -14,6 +14,15 @@ FormView.prototype = {
 
     events: {
 
+        'keypress .exercise__title': function (event) {
+            let target = event.target;
+            let value = target.value;
+
+            if (value.length > 0) {
+                this.trigger('get_exercises', value);
+            }
+        },
+
         'click .approach__start': function ( event ) {
             if( !this._approach ) {
                 var exercise = this.rootNode.querySelector('.exercise__title').value,
@@ -69,7 +78,7 @@ FormView.prototype = {
         },
 
         'submit form preventDefault': function() {}
-    }
+    },
 
 };
 

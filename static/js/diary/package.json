@@ -1,14 +1,14 @@
 {
-    "name": "",
-    "version": "0.0.1",
-    "description": "Diary for fit-app",
-    "main": "app/app.js",
-    "devDependencies": {
-        "base-frame": "0.*",
-        "babel-core": "5.8.*",
-        "babel-loader": "5.3.*",
-        "json-loader": "0.5.*",
-        "text-loader": "0.0.1",
-        "tpl-to-vdom-loader": "0.*"
-    }
+  "name": "",
+  "version": "0.0.1",
+  "description": "Diary for fit-app",
+  "main": "app/app.js",
+  "devDependencies": {
+    "babel-core": "5.8.*",
+    "babel-loader": "5.3.*",
+    "base-frame": "^0.2.2",
+    "json-loader": "0.5.*",
+    "text-loader": "0.0.1",
+    "tpl-to-vdom-loader": "0.*"
+  }
 }
