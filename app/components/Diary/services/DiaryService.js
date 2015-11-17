@@ -1,11 +1,15 @@
 var BaseComponent = require('base-frame-server/baseComponent'),
-    defer = require('base-frame-server/util').defer;
+    defer = require('base-frame-server/util').defer,
+    db = require('../../../../models/index');
+var Exercises = db.Exercises;
 
 function DiaryService() {
     this.init();
 }
 
 DiaryService.prototype = {
+
+    Exercises: Exercises,
 
     addRecord: function ( d ) {
         var req = d.req,
@@ -24,14 +28,25 @@ DiaryService.prototype = {
         exercise = exercise.toLowerCase();
 
         if (exercise === 'any') {
-            return this.query('SELECT `exercize_title` FROM `exercises` LIMIT 3');
+            //return this.query('SELECT `exercize_title` FROM `exercises` LIMIT 3');
+            return this.Exercises
+                .findAll({
+                    attributes: ['title'],
+                    limit: 3
+                });
         } else {
-            return this.query('SELECT `exercize_title` FROM `exercises` WHERE `exercize_title` LIKE \"' + exercise + '%\" LIMIT 3');
+            //return this.query('SELECT `exercize_title` FROM `exercises` WHERE `exercize_title` LIKE \"' + exercise + '%\" LIMIT 3');
+            return this.Exercises
+                .findAll({
+                    attributes: ['title'],
+                    where: {
+                        title: {
+                            $like: exercise + '%'
+                        }
+                    },
+                    limit: 3
+                })
         }
-    },
-
-    query: function (query) {
-        return this.emit.mysqlQuery(query);
     }
 
 };

@@ -13,6 +13,7 @@
   },
   "scripts": {
     "migrate": "sequelize db:migrate",
+    "migrate:undo": "sequelize db:migrate:undo",
     "start": " node app/app.js",
     "styles": "stylus -u jeet -u axis -u rupture static/styles/stylus/style.styl > static/styles/css/style.css",
     "styles-watch": "stylus -u jeet -u axis -u rupture -w static/styles/stylus/style.styl > static/styles/css/style.css"

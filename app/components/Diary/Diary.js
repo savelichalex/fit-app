@@ -32,7 +32,7 @@ DiaryComponent.prototype = {
                 var self = this;
                 this.diaryService.getExercises(data.params[0])
                     .then(function (d) {
-                        self.json(d.rows, data.res);
+                        self.json(d.map(o => o.dataValues.title), data.res);
                     })
             } )
         }

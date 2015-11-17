@@ -1,8 +1,10 @@
+var Exercises = require('../models/index').Exercises;
+
 'use strict';
 
 module.exports = {
     up: function (queryInterface, Sequelize) {
-        return queryInterface.createTable(
+        queryInterface.createTable(
             'exercises',
             {
                 id: {
@@ -18,6 +20,12 @@ module.exports = {
                 charset: 'utf8'
             }
         );
+        Exercises.create({title: 'squats'});
+        Exercises.create({title: 'push-ups'});
+        Exercises.create({title: 'tightening'});
+        Exercises.create({title: 'deadlift'});
+        Exercises.create({title: 'bench press'});
+        Exercises.create({title: 'seated cable row'});
     },
 
     down: function (queryInterface, Sequelize) {
