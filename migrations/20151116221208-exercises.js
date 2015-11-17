@@ -10,9 +10,8 @@ module.exports = {
                     primaryKey: true,
                     autoIncrement: true
                 },
-                exercise_title: {
-                    type: Sequelize.STRING(255),
-                    size: 255
+                title: {
+                    type: Sequelize.STRING(255)
                 }
             },
             {

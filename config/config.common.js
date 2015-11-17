@@ -1,7 +1,7 @@
-{
+module.exports = {
   "development": {
     "username": "root",
-    "password": "119911",
+    "password": null,
     "database": "fit-app",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -20,4 +20,4 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
-}
+};
