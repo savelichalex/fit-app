@@ -77,7 +77,13 @@ FormView.prototype = {
             }
         },
 
-        'submit form preventDefault': function() {}
+        'submit form preventDefault': function () {
+        },
+
+        'click li': function (event) {
+            let target = event.target;
+            this.trigger('')
+        }
     },
 
 };

@@ -97,7 +97,6 @@ Diary.prototype = {
             }
         }
     }
-
 };
 
 Diary.extends( BaseComponent );

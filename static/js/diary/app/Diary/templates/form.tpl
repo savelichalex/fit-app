@@ -2,14 +2,15 @@
     {{ if( state === 'new' ) { }}
         <label for="exercise__title">Exercise title: </label>
     <input type="text" id="exercise__title"
-           class="exercise__title {{= exerciseEmpty ? 'exercise__title-error' : '' }}"/>
+           class="exercise__title {{= exerciseEmpty ? 'exercise__title-error' : '' }}"
+           value="{{= exerciseTitle }}"/>
         <label for="exercise__weight">Weight: </label>
         <input type="text" id="exercise__weight" class="exercise__weight {{= weightEmpty ? 'exercise__weight-error' : '' }}"/>
         <button class=".approach__start">Start approach</button>
     {{ if( exercises ) { }}
     <ul class="exercise__autocomplete">
         {{ exercises.forEach( function ( exercise ) { }}
-        <li>{{= exercise.exercize_title }}</li>
+        <li>{{= exercise }}</li>
         {{ } ); }}
     </ul>
     {{ } }}
