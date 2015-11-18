@@ -1,5 +1,10 @@
 {
   "name": "fit-app",
+  "description": "App for collect fit metrics",
+  "version": "0.1.0",
+  "engine": {
+    "node": "5.0.0"
+  },
   "dependencies": {
     "base-frame-server": "0.0.5",
     "mysql": "2.*",
