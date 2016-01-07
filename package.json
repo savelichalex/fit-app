@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "base-frame-server": "0.0.5",
+    "jquery": "^2.1.4",
     "mysql": "2.*",
     "rupture": "^0.6.1",
     "sequelize": "^3.13.0",
@@ -14,14 +15,25 @@
   },
   "devDependencies": {
     "axis": "0.5.*",
+    "babel": "^6.3.26",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "base-components": "^0.1.8",
     "jeet": "6.1.*",
-    "rupture": "0.6.*"
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6",
+    "rupture": "0.6.*",
+    "stylus": "^0.53.0",
+    "webpack": "^1.12.10"
   },
   "scripts": {
     "migrate": "sequelize db:migrate",
     "migrate:undo": "sequelize db:migrate:undo",
     "start": " node app/app.js",
     "styles": "stylus -u jeet -u axis -u rupture static/styles/stylus/style.styl > static/styles/css/style.css",
-    "styles-watch": "stylus -u jeet -u axis -u rupture -w static/styles/stylus/style.styl > static/styles/css/style.css"
+    "styles-watch": "stylus -u jeet -u axis -u rupture -w static/styles/stylus/style.styl > static/styles/css/style.css",
+    "build": "webpack webpack.config.js"
   }
 }
