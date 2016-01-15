@@ -24,7 +24,7 @@ export class NewForm extends React.Component {
                 weightEmpty: !weight
             } );
         } else {
-            this.props.startApproach( exercise, weight )
+            this.props.queue.put( exercise, weight );
         }
     }
 

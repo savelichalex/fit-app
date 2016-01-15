@@ -4,6 +4,8 @@ import { NewForm } from './NewForm';
 import { StartedForm } from './StartedForm';
 import { EndForm } from './EndForm';
 
+import { Queue } from '../../helpers/Queue';
+
 const STATES = {
     NEW: 0,
     START: 1,
@@ -28,9 +30,9 @@ export class Form extends React.Component {
     render() {
         var form;
         switch( this.state.state ) {
-            case STATES.NEW: form = <NewForm startApproach={this.startApproach.bind(this)} />; break;
-            case STATES.START: form = <StartedForm endApproach={this.endApproach.bind(this)} />; break;
-            case STATES.END: form = <EndForm enterReps={this.enterReps.bind(this)} />; break;
+            case STATES.NEW: form = <NewForm queue={ new Queue( this.startApproach, this ) } />; break;
+            case STATES.START: form = <StartedForm queue={ new Queue( this.endApproach, this ) } />; break;
+            case STATES.END: form = <EndForm queue={ new Queue( this.enterReps, this ) } />; break;
         }
         return (
             <form autoComplete="off">
@@ -57,7 +59,7 @@ export class Form extends React.Component {
 
     enterReps( reps ) {
         this._approach.repetitions = reps;
-        this.props.onApproach( this._approach );
+        this.props.queue.put( this._approach );
         this.setState({
             state: STATES.NEW
         });

@@ -15,7 +15,7 @@ export class EndForm extends React.Component {
                 repsEmpty: true
             } );
         } else {
-            this.props.enterReps( reps )
+            this.props.queue.put( reps )
         }
     }
 

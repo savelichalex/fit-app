@@ -4,17 +4,19 @@ import ReactDom from 'react-dom';
 
 import { Form } from './views/Form';
 
+import { Queue } from '../helpers/Queue';
+
 export class Diary extends BaseComponent {
-    constructor() {
-        super();
+	constructor() {
+		super();
 
-        ReactDom.render(
-            <Form onApproach={this.onApproach.bind(this)} />,
-            document.getElementById( 'exercise-form' )
-        );
-    }
+		ReactDom.render(
+			<Form queue={ new Queue(this.onApproach, this)}/>,
+			document.getElementById('exercise-form')
+		);
+	}
 
-    onApproach( approach ) {
-        console.log( approach );
-    }
+	onApproach(approach) {
+		console.log(approach);
+	}
 }
