@@ -253,8 +253,6 @@ th {
   text-decoration: none;
   display: inline-block;
   border: none;
-  -webkit-touch-callout: none;
-  user-select: none;
 }
 .approach__start:hover,
 .approach__before-end:hover,
@@ -306,4 +304,10 @@ th {
     padding: 1% 0;
     margin: 0;
   }
+}
+
+path {
+  fill: none;
+  stroke: #d13f19;
+  stroke-width: 10;
 }

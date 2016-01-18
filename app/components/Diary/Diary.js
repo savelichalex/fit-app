@@ -1,12 +1,12 @@
 'use strict';
 
-const BaseComponent = require('base-components');
+const BaseComponent = require('base-components').BaseComponent;
 const DiaryService = require('./services/DiaryService');
 const Renderer = require('base-frame-server/Renderer');
 
 class Diary extends BaseComponent {
-	constructor() {
-		super();
+	constructor(mediator) {
+		super(mediator);
 	}
 
 	slots() {
@@ -35,4 +35,4 @@ class Diary extends BaseComponent {
 	}
 }
 
-module.exports = DiaryComponent;
+module.exports = Diary;

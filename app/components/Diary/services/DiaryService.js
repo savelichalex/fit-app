@@ -4,12 +4,16 @@ const db = require('../../../../models/index');
 const Exercises = db.Exercises;
 
 class DiaryService {
-	static addRecord({req}) {
+	static addRecord(d) {
+		const req = d.req;
 		let postData = '';
 		req.on('data', chunk => postData += chunk.toString('utf-8'));
 		req.on('end', () => {
 			console.log(postData.split('&').reduce((prev, item) => {
-				const [key, val] = item.split('=');
+				//const [key, val] = item.split('=');
+				const arr = item.split('=');
+				const key = arr[0];
+				const val = arr[1];
 				prev[key] = val;
 				return prev;
 			}, {}));
