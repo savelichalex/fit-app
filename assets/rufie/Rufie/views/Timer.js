@@ -59,6 +59,7 @@ export class Timer extends Component {
 
 		return (
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width={this.props.width} height={this.props.width}>
+				<text x="40%" y="50%"><tspan>{this.state.time}</tspan></text>
 				<path d={path}/>
 			</svg>
 		)
